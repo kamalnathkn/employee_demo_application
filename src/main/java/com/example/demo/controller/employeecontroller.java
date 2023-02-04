@@ -31,6 +31,12 @@ public class employeecontroller {
         System.out.println("in line 31");
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
+     @GetMapping("/tocheck")
+    public ResponseEntity<List<Employee>> getAllEmployees () {
+        List<Employee> employees = employeeService.findAllEmployees();
+        System.out.println("in line 31");
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
 
 
     @GetMapping("/all2")
