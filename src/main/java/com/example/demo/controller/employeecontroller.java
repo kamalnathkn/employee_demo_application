@@ -46,7 +46,12 @@ public class employeecontroller {
         return("employees1");
     }
     
-
+    @GetMapping("/gitpush")
+    public String getAllEmployees4 () {
+//        List<Employee> employees = employeeService.findAllEmployees();
+        System.out.println("in line 32");
+        return("employees1");
+    }
     
     @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
