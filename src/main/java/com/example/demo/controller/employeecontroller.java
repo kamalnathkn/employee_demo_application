@@ -34,9 +34,16 @@ public class employeecontroller {
      @GetMapping("/tocheck")
     public ResponseEntity<List<Employee>> getAllEmployees () {
         List<Employee> employees = employeeService.findAllEmployees();
-        System.out.println("in line 31");
+        System.out.println("in line 37");
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
+    @GetMapping("/tocheckfromnewbranch")
+    public ResponseEntity<List<Employee>> getAllEmployees () {
+        List<Employee> employees = employeeService.findAllEmployees();
+        System.out.println("in line 33");
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
 
 
     @GetMapping("/all2")
