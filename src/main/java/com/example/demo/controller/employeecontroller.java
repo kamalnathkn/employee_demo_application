@@ -16,15 +16,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Employee;
+import com.example.demo.repo.employeerepo;
 import com.example.demo.service.employeeservice;
+
+import jakarta.persistence.Column;
 
 @RestController
 @RequestMapping("/employee")
 public class employeecontroller {
 	private final employeeservice employeeService;
-	 Employee employee;
-    public employeecontroller(employeeservice employeeService) {
+	 private final employeerepo employeeRepo;
+ Employee employee;
+    public employeecontroller(employeeservice employeeService,employeerepo employeeRepo) {
         this.employeeService = employeeService;
+        this .employeeRepo= employeeRepo;
+       
     }
 
     @GetMapping("/all")
@@ -79,24 +85,42 @@ public class employeecontroller {
        
 }
     
-   
-   @GetMapping("/all21")
+    @GetMapping("/all21")
     public List<Employee> getAllEmployees21 ( Employee employee) {  
 	   System.out.println("in line 85");
 	   List<Employee> employees1 =new ArrayList<Employee>();
 	   List<Employee> employees = employeeService.findAllEmployees();
 for(Employee addem  :employees) {
+//if(addem.getId() ==1001)
+//{
+//      
+//        System.out.println("in line 91");
+//        
+//        employees1.add(addem);
+//       
+//}
+
 if(addem.getId() ==1001)
 {
-      
-        System.out.println("in line 91");
-        
-        employees1.add(addem);
-       
+	System.out.println("in line 91");
+	employees1.add(addem);
 }
-
 }
 return employees1;
        
 }
+   @GetMapping("/add")
+   public  void AddEmployees () {
+	   System.out.println("in line 103");
+	   Employee employee=new Employee();
+	   List<Employee> employees = employeeService.findAllEmployees();
+	   employee.setEmail("kamal@gmail.com");
+	   employee.setEmployeeCode("252345");
+	   employee.setPhone("94342525252");
+	   employee.setImageUrl("www.mag");
+	   employee.setJobTitle("tt");
+	   employee.setName("kamal");
+	   employeeRepo.save(employee);
+	  
+   }
 }
