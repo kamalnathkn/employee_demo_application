@@ -26,7 +26,7 @@ import jakarta.persistence.Column;
 public class employeecontroller {
 	private final employeeservice employeeService;
 	 private final employeerepo employeeRepo;
- Employee employee;
+// Employee employee;
     public employeecontroller(employeeservice employeeService,employeerepo employeeRepo) {
         this.employeeService = employeeService;
         this .employeeRepo= employeeRepo;
@@ -113,14 +113,41 @@ return employees1;
    public  void AddEmployees () {
 	   System.out.println("in line 103");
 	   Employee employee=new Employee();
+	   List<Employee> final1= new ArrayList<Employee>();
 	   List<Employee> employees = employeeService.findAllEmployees();
-	   employee.setEmail("kamal@gmail.com");
-	   employee.setEmployeeCode("252345");
-	   employee.setPhone("94342525252");
-	   employee.setImageUrl("www.mag");
-	   employee.setJobTitle("tt");
-	   employee.setName("kamal");
-	   employeeRepo.save(employee);
-	  
-   }
-}
+	   int count =1;
+	   for(Employee addem  :employees) {
+		 count ++;
+		 System.out.println(count);
+		   System.out.println("in for loop");   
+		   System.out.println(addem.getId()); 
+			employee.setId((addem.getId()+count));
+		   employee.setEmail(addem.getEmail());
+			  employee.setEmployeeCode("2523");
+			   employee.setPhone("9434");
+			  employee.setImageUrl("www.mag1");
+			   employee.setJobTitle("tt1");
+			   employee.setName("kamal");
+		   final1.add(employee);   
+		   
+//		   if (addem.getId()==1001) {
+//		employee.setId((long) (1005+1));
+//	 	   employee.setEmail(addem.getEmail());
+//	  employee.setEmployeeCode("252345");
+//	   employee.setPhone("943425");
+//	  employee.setImageUrl("www.mag");
+//	   employee.setJobTitle("tt");
+//	   employee.setName("kamal");
+//	  }
+//		   employeeRepo.save(employee);
+		   System.out.println("in for loop before insert query ");  
+		   employeeRepo.saveAll(final1);
+		   System.out.println("in for loop end ");  
+		   count ++;
+		   
+	   } 
+//   employeeRepo.saveAll(final1);
+//	   final1.add(employee);
+//	   }employeeRepo.saveAll(final1);
+   }}
+
