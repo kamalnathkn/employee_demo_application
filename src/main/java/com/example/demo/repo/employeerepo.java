@@ -5,22 +5,33 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.example.demo.model.Employee;
-
-import jakarta.persistence.Entity;
-
+@Repository
 public interface employeerepo extends JpaRepository<Employee, Long> {
 
 	
 
 	List<Employee> findAll();
 
-	Employee save(Employee employee);
+	
 
 	Object findEmployeeById(Long id);
 
 	void deleteEmployeeById(Long id);
+	
 
+
+   // List<Employee> findBynameOrderByidAsc(String name);
+  
+	List<Employee> findEmployeeByname(String name);
+	
+	@Query(value = "SELECT * FROM Employee u ", 
+			  nativeQuery = true)
+			List<Employee> findAllActiveUsersNative();
+
+
+	
 
 }
