@@ -74,6 +74,6 @@ public class employeecontroller {
         Employee updateEmployee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
-    //check the changes ar epulled also when merge is given
+    //check the changes are pulled also when merge is given 
 }
 
