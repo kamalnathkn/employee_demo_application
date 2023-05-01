@@ -77,7 +77,7 @@ public class employeecontroller {
     //check the changes are pulled also when merge is given 
     //check2
 	//created for pull request
-	//checkrebase from eclipse
+	//checkrebase from git
     //learn checkout
     //change 2 for switch learn 
     
