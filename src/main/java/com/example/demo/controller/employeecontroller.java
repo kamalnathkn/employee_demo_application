@@ -59,7 +59,6 @@ public class employeecontroller {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
         
-        //learn2
     }
 }
 
