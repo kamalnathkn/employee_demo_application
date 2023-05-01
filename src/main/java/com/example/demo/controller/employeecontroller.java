@@ -64,5 +64,10 @@ public class employeecontroller {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @DeleteMapping
+    public ResponseEntity<?> deleteEmployeegitcommitfromeclipse(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
 
