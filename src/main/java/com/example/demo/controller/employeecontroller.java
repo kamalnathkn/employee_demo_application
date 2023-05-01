@@ -69,5 +69,10 @@ public class employeecontroller {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @PutMapping
+    public ResponseEntity<Employee> updateEmployeeforgitlearnfromeclipse(@RequestBody Employee employee) {
+        Employee updateEmployee = employeeService.updateEmployee(employee);
+        return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
+    }
 }
 
