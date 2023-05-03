@@ -74,14 +74,7 @@ public class employeecontroller {
         Employee updateEmployee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
-    //check the changes are pulled also when merge is given 
-    //check2
-	//created for pull request
-	//checkrebase from git
-  //checkrebase from eclipse 
-    //learn checkout
-    //change 2 for switch learn 
-    //merge
+    // push -merge -eclipse 
     
 }
 
