@@ -58,13 +58,6 @@ public class employeecontroller {
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
-//finl check
-	    //added from fit 
-
-        //added from eclipse
-
-	    //to check conflict added from git and pull from eclipse 
-	    //check2 changes frpm git1
 
 }
 
