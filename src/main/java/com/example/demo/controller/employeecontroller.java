@@ -61,7 +61,12 @@ public class employeecontroller {
         //commit check
         //commit\
         //push usimg merge from eclipse 
+
         //rebase1 rebase2
     }//rebase3.
+=======
+        //rebase1 rabse3
+    }
+>>>>>>> branch 'learn2' of https://github.com/kamalnathkn/employee_demo_application.git
 }
 
