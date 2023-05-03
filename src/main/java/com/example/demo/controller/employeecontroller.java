@@ -75,7 +75,11 @@ public class employeecontroller {
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
     // push -merge -eclipse 
+<<<<<<< HEAD
     //push -merge -conflict creation 
     
+=======
+    // push -merge changes in git and eclipse 
+>>>>>>> branch 'jenkins' of https://github.com/kamalnathkn/employee_demo_application.git
 }
 
