@@ -58,10 +58,7 @@ public class employeecontroller {
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
-        //commit check
-        //commit\
-        //push usimg merge from eclipse 
-        //rebase1 rabse3
+       
     }
 }
 
